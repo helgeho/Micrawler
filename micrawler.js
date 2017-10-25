@@ -471,6 +471,7 @@ var micrawler = (function() {
 			if (item.label) specStr += padStr(item.label + ": ", pretty ? env.specLabelPad : 0);
 			specStr += item.url;
 			if (includeMeta && item.meta) specStr += " " + item.meta.join(" ");
+            if (item.comment) specStr += "\n" + item.comment;
 			if (item.props) $.each(Object.keys(item.props), function (i, propKey) {
 				var prop = item.props[propKey];
 				specStr += "\n" + padStr(propKey + "= ", pretty ? env.specLabelPad : 0) + prop.value;
