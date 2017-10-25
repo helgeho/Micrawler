@@ -1,0 +1,180 @@
+body {
+	background-color: #ede9e8;
+	font-size: 12px;
+}
+
+div {
+	position: relative;
+}
+
+#top-tempas-search {
+	position: absolute;
+	top: 10px;
+	right: 150px;
+	width: 300px;
+}
+
+#crawl-wizard {
+	display: none;
+}
+
+#crawl-wizard .item {
+	text-align: center;
+}
+
+#crawl-frame-container {
+	display: none;
+}
+
+#spec-textarea {
+	font-family: monospace;
+	font-size: 10px;
+	width: 100%;
+	height: 210px;
+	white-space: pre;
+	resize: vertical;
+}
+
+#log-textarea {
+	font-family: monospace;
+	font-size: 10px;
+	width: 100%;
+	height: 228px;
+	white-space: pre;
+	resize: none;
+}
+
+#crawl-progress {
+	border: 1px solid #555555;
+}
+
+#report-collection-string {
+	font-family: monospace;
+	border: 1px solid #cccccc;
+	padding: 5px;
+	margin: 10px;
+	word-break: break-all;
+	text-align: left;
+	font-size: 10px;
+}
+
+#footer {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+iframe.crawl-frame {
+	position: relative;
+	float: left;
+	border: 1px solid #000000;
+	width: 300px;
+	height: 300px;
+}
+
+.logo-container {
+	position: relative;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.logo-container img {
+	margin: auto;
+}
+
+.progress {
+	width: 400px;
+	margin: auto;
+}
+
+.wizard-box {
+	border-radius: 20px;
+	width: 600px;
+	min-height: 350px;
+	border: 1px solid black;
+	display: inline-block;
+	margin: auto;
+	box-shadow: 0 0 20px #555555;
+	margin: 30px;
+	padding: 20px;
+}
+
+.text {
+	text-align: justify;
+}
+
+.centered {
+	text-align: center;
+}
+
+#report-title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.report-item, .report-item:link, .report-item:active, .report-item:hover, .report-item:visited {
+	display: block;
+	position: relative;
+	margin-top: 10px;
+	border-radius: 5px;
+	border: 1px solid #cccccc;
+	box-shadow: inset 0 0 10px #cccccc;
+	padding: 10px;
+	background-color: #fdfdfd;
+	color: #333333;
+	text-decoration: none;
+	cursor: not-allowed;
+}
+
+.report-label {
+	text-align: left;
+	font-weight: bold;
+	width: 60%;
+	overflow-x: hidden;
+	white-space: nowrap;
+}
+
+.report-url {
+	color: #999999;
+	text-align: left;
+	overflow-x: hidden;
+	white-space: nowrap;
+}
+
+.report-status {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	text-align: right:;
+	color: #2e6da4;
+}
+
+.btn.btn-link {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#cite-modal textarea {
+	font-family: monospace;
+	resize: none;
+	height: 200px;
+	cursor: text;
+	white-space: pre;
+}
+
+#report-analysis-result-status i {
+	color: #2e6da4;
+}
+
+#report-analysis-result {
+	text-align: center;
+}
+
+#report-analysis-result table {
+	font-family: monospace;
+	font-size: 12px;
+	width: 80%;
+	text-align: left;
+	margin: auto;
+}
