@@ -232,7 +232,7 @@ var micrawler = (function() {
 		return date.toISOString().substr(0, 19).replace("T", " ") + " UTC";
 	}
 
-	function setStatusIndicator($status, url, referenceTimestamp, success, meta) {
+	function setStatusIndicator($status, label, url, referenceTimestamp, success, meta) {
 		var text;
 		var color;
 		var hover;
@@ -268,7 +268,8 @@ var micrawler = (function() {
 		$status.css("color", color);
 		if (viewUrl) {
 			var $link = $status.parents("a");
-			$link.attr("href", viewUrl);
+            $link.attr("href", viewUrl);
+			$link.click(function() {view(label, viewUrl); return false;});
 			$link.css("cursor", "pointer");
 		}
 	}
@@ -308,6 +309,13 @@ var micrawler = (function() {
 			});
         }
         return promise;
+    }
+
+    function view(title, url) {
+        var $modal = $("#view-modal");
+        $modal.find(".modal-title").text(title);
+        $modal.find(".view-frame").attr("src", url);
+        $modal.modal("show");
     }
 
 	function fetchMeta(spec, timestamp) {
@@ -385,10 +393,11 @@ var micrawler = (function() {
 			if (spec.permalink) {
 				set(spec.permalink, generateBibtex("misc", spec, spec.permalink), generateBibtex("online", spec, spec.permalink));
 			} else {
-				env.persistenceProviderRequest(spec).done(function(success, permalink) {
+				env.persistenceProviderRequest(spec).done(function(success, permalinkResponse) {
 					if (success) {
-						spec.permalink = permalink;
-			            set(permalink, generateBibtex("misc", spec, permalink), generateBibtex("online", spec, permalink));
+						var permalink = permalinkResponse.split("\n")[0].trim();
+						spec.permalink = permalinkResponse;
+			            set(permalinkResponse, generateBibtex("misc", spec, permalink), generateBibtex("online", spec, permalink));
 					} else {
 						set("error");
 					}
@@ -447,7 +456,7 @@ var micrawler = (function() {
 			$url.attr("title", item.url);
 
             env.fetchMetaRequest(item.url, timestamp).done(function (success, meta) {
-				setStatusIndicator($status, item.url, spec.timestamp, success, meta);
+				setStatusIndicator($status, item.label, item.url, spec.timestamp, success, meta);
 			});
 		});
 		wizardGoto($container);
@@ -622,6 +631,7 @@ var micrawler = (function() {
 		showWizard: showWizard,
 		wizardHome: wizardHome,
 		showCiteTabs: showCiteTabs,
-        config: config
+        config: config,
+		view: view
 	};
 })();

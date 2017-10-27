@@ -163,6 +163,15 @@ iframe.crawl-frame {
 	white-space: pre;
 }
 
+#view-modal .modal-dialog {
+	width: 90%;
+	height: 75%;
+}
+
+#view-modal .modal-body {
+	padding: 0;
+}
+
 #report-analysis-result-status i {
 	color: #2e6da4;
 }
