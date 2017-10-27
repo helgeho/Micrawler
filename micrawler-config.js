@@ -5,7 +5,7 @@ micrawler.config(function (env) {
     env.specLabelPad = 30;
     env.parallelCrawls = 10;
 
-    var tempasBaseUrl = "http://localhost:9000"; //"http://tempas.L3S.de";
+    var tempasBaseUrl = "http://tempas.L3S.de";
 
     env.specProxyRequest = function(url) {
         return micrawler.request(tempasBaseUrl + "/micrawler/spec/" + url);
