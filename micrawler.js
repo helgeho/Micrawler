@@ -555,7 +555,7 @@ var micrawler = (function() {
 	}
 
 	function createCrawlFrame(url) {
-		var $frame = $("<iframe>").addClass("crawl-frame").attr("src", url).attr("sandbox", "allow-scripts");
+		var $frame = $("<iframe>").addClass("crawl-frame").attr("src", url).attr("sandbox", "allow-scripts allow-same-origin allow-popups allow-pointer-lock");
 		$("#" + crawlFrameContainerId).append($frame);
 		return $frame;
 	}
